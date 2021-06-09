@@ -18,20 +18,15 @@
 </head>
 <body>
     
-    <header>
-        <nav class="d-flex">
-            <div class="logo"><h1>movieDB</h1></div>
-            <div class="search-box">
-                <input class="form-control w-100" type="text" placeholder="Search for movies">
-            </div>
-            <div class="users-profile"></div>
+        <nav class="d-flex fixed-top mb-5">
+            <div class="logo text-center p-4"><h1>movieDB</h1></div>
         </nav>
-    </header>
+    
     <!-- header stop here -->
 
-    <div class="hero">
+    <div class="hero mt-4">
         <div class="herolayout">
-            <div class="hero-content">
+            <div class="hero-content pt-3">
                 <h4>MovieDB</h4>
                 <p>entertainment at its best</p>
             </div>
@@ -40,7 +35,7 @@
 
  <div class="container cont">
      <h1 class="text-center border-bottom pb-1 mt-3">Top Rated Movie</h1>
-        <div class="row border" id="MovieCard">
+        <div class="row border pb-4" id="MovieCard">
           
              
         </div>
@@ -72,15 +67,15 @@
     
         <!--footer-->
         <footer>
-            <div class="footer-bottom-area pt-4 bg-dark-light section-padding-sm">
+            <div class="footer-bottom-area py-4 bg-dark-light section-padding-sm">
                 <div class="container">
                     <div class="row widgets footer-widgets">
 
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="single-widget widget-about">
                                 <h5 class="widget-title">About Us</h5>
-                                <img src="" alt="about widget image">
-                                <p>We are a team of designers and developers that create high quality</p>
+                                <!-- <img src="" alt="about widget image"> -->
+                                <p>The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different.</p>
                             </div>
                         </div>
 
@@ -99,13 +94,13 @@
 
                         <div class="col-lg-3 col-md-6 col-12">
                             <div class="single-widget widget-quick-links">
-                                <h5 class="widget-title">Customer Service</h5>
+                                <h5 class="widget-title">Quick Links</h5>
                                 <ul>
-                                    <li><a href="#">Shipping Policy</a></li>
-                                    <li><a href="#">Compensation First</a></li>
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="#">Return Policy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Popular Movie</a></li>
+                                    <li><a href="#">Top Rated Movie</a></li>
+                                    <li><a href="#">Adult Movie</a></li>
+                                    <li><a href="#">Family And Friends</a></li>
+                                    <li><a href="#">Cartons For Children</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -137,7 +132,14 @@
                     </div>
                 </div>
             </div>
+                <span class="copyRight text-success text-center d-flex justify-content-center bg-dark p-2"></span>
+        
         </footer>
+        <script>
+            let day = new Date;
+            let year = day.getFullYear();
+            document.querySelector(".copyRight").innerHTML = "&copy; The Movie Database API, All right reseved " +  year
+        </script>
 
     <script src="app.js"></script>
 </body>

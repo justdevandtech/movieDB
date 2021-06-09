@@ -36,16 +36,6 @@ nav .logo {
 }
 
 
-nav .search-box {
-    flex: 6;
-    margin: 10px;
-}
-
-nav .users-profile {
-    flex: 4;
-}
-
-
 .hero {
     background: url("img/headerImage.jpg")no-repeat center/cover;
     height: 250px;
@@ -189,26 +179,56 @@ h5 {
     position: relative;
 } 
 
+.movieDetailsPoperContainer {
+    display: none;
+}
  .movieDetailsPoperContainer {
     position: fixed;
-    top: 50px;
     left: 50px;
     right: 50px;
     bottom: 50px;
-    height: 78%;
+    height: 50%;
     width: 85%;
     z-index: 1;
-   display: none;
 }
-
+ .poperActive {
+    display: block;
+} 
 @media (max-width: 600px){
     .movieDetailsPoperContainer {
         width: 100%;
         left: 0;
         right: 0;
-        height: 60%;
+        top: 70px;
+        bottom: 50px;
+        height: 100%;
     }
 }
+
+@media only screen and (min-width: 600px) {
+    .movieDetailsPoperContainer{
+        height: 55%;
+    }
+}
+
+ @media only screen and (min-width: 992px) {
+    .movieDetailsPoperContainer {
+        bottom: 90px;
+        width: 70%;
+        display: flex;
+        margin: auto;
+        height: 55%;
+        top: 120px;
+        display: none;
+    }
+
+     .poperActive {
+    display: block;
+} 
+} 
+ 
+
+
 .card-text {
     display: none;
 }
@@ -217,9 +237,6 @@ h5 {
     cursor: pointer;
 }
 
-.poperActive {
-    display: block;
-}
 
 /* FOOTER START */
 

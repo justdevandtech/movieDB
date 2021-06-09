@@ -11,74 +11,75 @@ const moviesDetailspoper = document.querySelector(".movieDetailsPoperContainer")
 
 
 
-let url =
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=2cda2302f40d21e8f5e4afc8db7519bb";
+let movieDatas = [];
 
-  async function app() {
+ const app =  async () => {
 
-    try {
-       const response = await fetch(url);
-       const data = await response.json();
-       console.log(data);
-       let UI = data.results.map((item, index) => {
-         return ` <div class="col-sm-6 col-md-4 col-lg-3 mt-4 crd eachMovieCard">
-                <div class="card">
-                    <img class="card-img-top movieImg" src="https://image.tmdb.org/t/p/w500/${item.poster_path}" style="height: 250px;">
+   try {
+      const response = await fetch(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=2cda2302f40d21e8f5e4afc8db7519bb"
+      );
+        movieDatas = await response.json();
+       displayMovie(movieDatas);
+   } catch (error) {
+     console.log(error);
+   }
+  };
+
+const displayMovie = (movies) => {
+ 
+    const dataFromMovieAPI = movies.results
+      .map(movie_item => {
+        return ` <div class="col-sm-6 col-md-4 col-lg-3 mt-4 crd eachMovieCard">
+                <div class="card" style="height: 25rem;">
+                    <img class="card-img-top movieImg" src="https://image.tmdb.org/t/p/w500/${movie_item.poster_path}" style="height: 160px;">
                     <div class="card-block">
                         <figure class="profile">
-                            <img src="https://image.tmdb.org/t/p/w500/${item.poster_path}" class="profile-avatar" alt="">
+                            <img src="https://image.tmdb.org/t/p/w500/${movie_item.poster_path}" class="profile-avatar" alt="">
                         </figure>
-                        <h4 class="card-title movieTitle mt-3">${item.original_title}</h4>
+                        <h4 class="card-title movieTitle mt-3">${movie_item.original_title}</h4>
                         <div class="meta">
-                            <a class="text-capitalize userScore">Lang: ${item.original_language} - Users score: ${item.vote_average}(${item.vote_count})</a>
+                            <a class="text-capitalize userScore">Lang: ${movie_item.original_language} - Users score: ${movie_item.vote_average}(${movie_item.vote_count})</a>
                         </div>
                         <div class="card-text movieReview display-none">
-                            ${item.overview}
+                            ${movie_item.overview}
                         </div>
                     </div>
                     <div class="card-footer">
-                        <small class="releaseDate">Released: ${item.release_date}</small>
-                        <button class="btn btn-secondary float-right btn-sm"><i class="fas fa-eye"></i> ${item.popularity}</button>
+                        <small class="releaseDate">Released: ${movie_item.release_date}</small>
+                        <button class="btn btn-secondary float-right btn-sm"><i class="fas fa-eye"></i> ${movie_item.popularity}</button>
                     </div>
                 </div>
-            </div>`;
-       }).join('');
-      MovieUI.innerHTML = UI;
-      let eachMovies_item = document.querySelectorAll(".eachMovieCard");
-      
-
-
-      eachMovies_item.forEach((item) =>{
-        let movieTitle = item.querySelector(".movieTitle");
-        let movieReview = item.querySelector(".movieReview");
-        let movieImg = item.querySelector(".movieImg");
-        let releaseDate = item.querySelector(".releaseDate");
-        let user_Score = item.querySelector(".userScore");
-        
-        
-       
-
-        item.addEventListener('click', () =>{
-          moviesDetailspoper.classList.add("poperActive");
-          poperTitle.innerHTML = movieTitle.textContent
-          poperReview.innerHTML = movieReview.textContent
-          poperImage.src = movieImg.src
-          poperReleasedDate.innerHTML = releaseDate.textContent;
-          userScore.innerHTML = user_Score.textContent
-       
-          
-        })
+            </div>
+            `;
       })
+      .join("");
+    MovieUI.innerHTML = dataFromMovieAPI;
 
-poperCloseBtn.addEventListener("click", () => {
-  moviesDetailspoper.classList.remove("poperActive");
-})
+    let eachMovies_item = document.querySelectorAll(".eachMovieCard");
+          eachMovies_item.forEach(item => {
+            let movieTitle = item.querySelector(".movieTitle");
+            let movieReview = item.querySelector(".movieReview");
+            let movieImg = item.querySelector(".movieImg");
+            let releaseDate = item.querySelector(".releaseDate");
+            let user_Score = item.querySelector(".userScore");
 
+            item.addEventListener("click", () => {
+              moviesDetailspoper.classList.add("poperActive");
+              poperTitle.innerHTML = movieTitle.textContent;
+              poperReview.innerHTML = movieReview.textContent;
+              poperImage.src = movieImg.src;
+              poperReleasedDate.innerHTML = releaseDate.textContent;
+              userScore.innerHTML = user_Score.textContent;
+            });
+          });
 
-    } catch (error) {
-      MovieUI.innerHTML = "Page 404, " + error + " " + "data from the server" 
-      console.log("internal error, server not responding");
-    }
-   }
+          /* close poper btn */
+         poperCloseBtn.addEventListener("click", () => {
+           moviesDetailspoper.classList.remove("poperActive");
+         });
 
-   app()
+};
+
+ app();
+ 
