@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="d-flex">
+            <div class="logo"><h1>movieDB</h1></div>
+            <div class="search-box">
+                <input class="form-control w-100" type="text" placeholder="Search for movies">
+            </div>
+            <div class="users-profile"></div>
+        </nav>
+    </header>
+    <!-- header stop here -->
+
+    <div class="hero">
+        <div class="herolayout">
+            <div class="hero-content">
+                <h4>MovieDB</h4>
+                <p>entertainment at its best</p>
+            </div>
+        </div>
+    </div>
+
+ <div class="container cont">
+     <h1 class="text-center border-bottom pb-1 mt-3">Top Rated Movie</h1>
+        <div class="row border" id="MovieCard">
+          
+             
+        </div>
+        <div class="movieDetailsPoperContainer bg-secondary rounded">
+            <div class="movieDetailsPoperContents text-white m-5">
+                <div class="row">
+                <div class="col">
+                    <div class="details1 d-flex">
+                        <img class="poperImage" src="img/headerImage.jpg" alt="" style="border-radius: 40%; width: 150px; height: 130px;">
+                        <div class="ms-3 ">
+                             <h4 class="title poperTitle mt-3">title</h4>
+                        <small class="poperReleasedDate">Released date</small>
+                        <br>
+                        <span class="userScore">users score</span>
+                        </div>
+                    </div>
+                    <hr>
+              <div class="movieDescription">
+                  <p class="movieDescrt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae illum quod obcaecati possimus, quis, rem voluptatem et non adipisci doloribus minus ad, eos mollitia asperiores itaque? Natus, reprehenderit repellendus.</p>
+              </div>
+                </div>
+           </div>
+            <button class="btn btn-danger mx-auto mt-2 d-flex px-3 poperCloseBtn">Close</button>
+                </div>
+        </div>
+</div>
+<br>
+<hr>
+    
+        <!--footer-->
+        <footer>
+            <div class="footer-bottom-area pt-4 bg-dark-light section-padding-sm">
+                <div class="container">
+                    <div class="row widgets footer-widgets">
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-about">
+                                <h5 class="widget-title">About Us</h5>
+                                <img src="" alt="about widget image">
+                                <p>We are a team of designers and developers that create high quality</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-quick-links">
+                                <h5 class="widget-title">My Account</h5>
+                                <ul>
+                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Your Account</a></li>
+                                    <li><a href="#">Advanced Search</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-quick-links">
+                                <h5 class="widget-title">Customer Service</h5>
+                                <ul>
+                                    <li><a href="#">Shipping Policy</a></li>
+                                    <li><a href="#">Compensation First</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-contact">
+                                <h5 class="widget-title">Contact Us</h5>
+                                <ul>
+                                    <li class="address">
+                                        <span class="icon"><i class="fa fa-map-marker"></i></span>
+                                        <p>Address : No 100 Street 100/2  Lagos City</p>
+                                    </li>
+                                    <li class="phone">
+                                        <span class="icon"><i class="fa fa-phone"></i></span>
+                                        <p><a href="#">+7568 54 3012</a></p>
+                                    </li>
+                                    <li class="fax">
+                                        <span class="icon"><i class="fa fa-fax"></i></span>
+                                        <p><a href="#">+7568 54 3012</a></p>
+                                    </li>
+                                    <li class="email">
+                                        <span class="icon"><i class="fa fa-envelope-o"></i></span>
+                                        <p><a href="#">emaill@gmail.com</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
