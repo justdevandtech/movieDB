@@ -35,6 +35,14 @@ nav .logo {
     margin-left: 10px;
 }
 
+nav .logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav .logo a:hover {
+    color: green;
+}
 
 .hero {
     background: url("img/headerImage.jpg")no-repeat center/cover;
