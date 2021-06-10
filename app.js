@@ -8,6 +8,10 @@ const poperReview = document.querySelector(".movieDescrt");
 const poperReleasedDate = document.querySelector(".poperReleasedDate");
 const userScore = document.querySelector(".userScore");
 const moviesDetailspoper = document.querySelector(".movieDetailsPoperContainer"); 
+const movieDetailsPoperContainer = document.querySelector(
+  ".movieDetailsPoperContainer"
+);
+
 
 
 
@@ -31,7 +35,7 @@ const displayMovie = (movies) => {
     const dataFromMovieAPI = movies.results
       .map(movie_item => {
         return ` <div class="col-sm-6 col-md-4 col-lg-3 mt-4 crd eachMovieCard">
-                <div class="card" style="height: 25rem;">
+                <div class="card" style="height: 25rem; box-shadow: 0px 0px 10px 5px rgba(83, 80, 80, 0.616);">
                     <img class="card-img-top movieImg" src="https://image.tmdb.org/t/p/w500/${movie_item.poster_path}" style="height: 160px;">
                     <div class="card-block">
                         <figure class="profile">
@@ -71,6 +75,8 @@ const displayMovie = (movies) => {
               poperImage.src = movieImg.src;
               poperReleasedDate.innerHTML = releaseDate.textContent;
               userScore.innerHTML = user_Score.textContent;
+              movieDetailsPoperContainer.style.backgroundImage = 'url(' + movieImg.src + ')';
+              console.log(movieDetailsPoperContainer);
             });
           });
 

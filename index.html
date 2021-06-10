@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieDB API</title>
+    #
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
     <!-- bootstrap cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -14,6 +17,7 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,14 +41,16 @@
      <h1 class="text-center border-bottom pb-1 mt-3">Top Rated Movie</h1>
         <div class="row border pb-4" id="MovieCard">
           
-             
+             <!-- movie display here--> 
         </div>
-        <div class="movieDetailsPoperContainer bg-secondary rounded">
-            <div class="movieDetailsPoperContents text-white m-5">
+
+<!-- popper -->
+        <div class="movieDetailsPoperContainer rounded">
+            <div class="movieDetailsPoperContents pt-3 pb-3 text-white mb-3 ps-2">
                 <div class="row">
                 <div class="col">
                     <div class="details1 d-flex">
-                        <img class="poperImage" src="img/headerImage.jpg" alt="" style="border-radius: 40%; width: 150px; height: 130px;">
+                        <img class="poperImage rounded" src="img/headerImage.jpg" alt="" style="width: 150px; height: 130px;">
                         <div class="ms-3 ">
                              <h4 class="title poperTitle mt-3">title</h4>
                         <small class="poperReleasedDate">Released date</small>
@@ -54,7 +60,7 @@
                     </div>
                     <hr>
               <div class="movieDescription">
-                  <p class="movieDescrt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae illum quod obcaecati possimus, quis, rem voluptatem et non adipisci doloribus minus ad, eos mollitia asperiores itaque? Natus, reprehenderit repellendus.</p>
+                  <p class="movieDescrt p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae illum quod obcaecati possimus, quis, rem voluptatem et non adipisci doloribus minus ad, eos mollitia asperiores itaque? Natus, reprehenderit repellendus.</p>
               </div>
                 </div>
            </div>

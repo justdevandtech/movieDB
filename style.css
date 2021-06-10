@@ -186,9 +186,19 @@ h5 {
  .cont {
     position: relative;
 } 
-
+.poperImage{
+    box-shadow: 0px 0px 10px 5px rgba(83, 80, 80, 0.616);
+}
+.movieDetailsPoperContents {
+background-color: rgba(0, 0, 0, 0.911);
+height: 100%;
+width: 100%;
+}
 .movieDetailsPoperContainer {
     display: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
  .movieDetailsPoperContainer {
     position: fixed;
@@ -197,7 +207,7 @@ h5 {
     bottom: 50px;
     height: 50%;
     width: 85%;
-    z-index: 1;
+    z-index: 222;
 }
  .poperActive {
     display: block;
@@ -207,9 +217,13 @@ h5 {
         width: 100%;
         left: 0;
         right: 0;
-        top: 70px;
+        top: 83px;
         bottom: 50px;
         height: 100%;
+    }
+    .movieDescrt {
+        font-size: 1.2rem;
+       
     }
 }
 
