@@ -12,6 +12,17 @@ const movieDetailsPoperContainer = document.querySelector(
   ".movieDetailsPoperContainer"
 );
 
+const searchbar = document.getElementById("searchbar");
+
+searchbar.addEventListener('keyup', (e) => {
+   const searchString = e.target.value.toLowerCase();
+let p = movieDatas.results;
+   let serdata = p.filter(items => {
+     return items.original_title.toLowerCase().includes(searchString);
+   });
+   displayMovie(serdata);
+})
+
 
 
 
@@ -24,16 +35,15 @@ let movieDatas = [];
         "https://api.themoviedb.org/3/movie/top_rated?api_key=2cda2302f40d21e8f5e4afc8db7519bb"
       );
         movieDatas = await response.json();
-       displayMovie(movieDatas);
+       displayMovie(movieDatas.results);
    } catch (error) {
      console.log(error);
    }
   };
 
 const displayMovie = (movies) => {
- 
-    const dataFromMovieAPI = movies.results
-      .map(movie_item => {
+    const dataFromMovieAPI = movies
+.map(movie_item => {
         return ` <div class="col-sm-6 col-md-4 col-lg-3 mt-4 crd eachMovieCard">
                 <div class="card" style="height: 25rem; box-shadow: 0px 0px 10px 5px rgba(83, 80, 80, 0.616);">
                     <img class="card-img-top movieImg" src="https://image.tmdb.org/t/p/w500/${movie_item.poster_path}" style="height: 160px;">
@@ -58,10 +68,11 @@ const displayMovie = (movies) => {
             `;
       })
       .join("");
-    MovieUI.innerHTML = dataFromMovieAPI;
+    MovieUI.innerHTML = dataFromMovieAPI; //Displaying API data to the DOM
 
+    //An algorithm to listen for click event on each of the movie cards in the DOM and then display a popper(Modal)
     let eachMovies_item = document.querySelectorAll(".eachMovieCard");
-          eachMovies_item.forEach(item => {
+          eachMovies_item.forEach((item , index) => {
             let movieTitle = item.querySelector(".movieTitle");
             let movieReview = item.querySelector(".movieReview");
             let movieImg = item.querySelector(".movieImg");
@@ -70,13 +81,12 @@ const displayMovie = (movies) => {
 
             item.addEventListener("click", () => {
               moviesDetailspoper.classList.add("poperActive");
-              poperTitle.innerHTML = movieTitle.textContent;
+              poperTitle.innerHTML =   movieTitle.textContent;
               poperReview.innerHTML = movieReview.textContent;
               poperImage.src = movieImg.src;
               poperReleasedDate.innerHTML = releaseDate.textContent;
               userScore.innerHTML = user_Score.textContent;
               movieDetailsPoperContainer.style.backgroundImage = 'url(' + movieImg.src + ')';
-              console.log(movieDetailsPoperContainer);
             });
           });
 
